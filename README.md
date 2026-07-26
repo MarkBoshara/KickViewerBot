@@ -1,7 +1,7 @@
 # ⚡ Kick Viewer Bot PRO - Live Stream Automation & Viewership Suite
 
 <p align="center">
-  <img src="../icon.png" alt="Kick Viewer Bot PRO Logo" width="160" height="160">
+  <img src="https://github.com/MarkBoshara/KickViewerBot/blob/main/icon.png" alt="Kick Viewer Bot PRO Logo" width="160" height="160">
 </p>
 
 <p align="center">
