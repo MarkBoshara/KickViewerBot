@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Kick Viewer Bot PRO - Features & Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0B0F19;
+      --card-bg: #111827;
+      --card-border: #1E293B;
+      --accent-emerald: #10B981;
+      --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+      --accent-blue: #38BDF8;
+      --accent-telegram: #26A5E4;
+      --accent-purple: #A855F7;
+      --accent-amber: #F59E0B;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* --- HERO HEADER --- */
+    header {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(11, 15, 25, 1) 100%);
+      border-bottom: 1px solid var(--card-border);
+      padding: 60px 0 40px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-emerald), transparent);
+      box-shadow: 0 0 15px var(--accent-emerald);
+    }
+
+    .logo-badge {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 20px auto;
+      background: #0F172A;
+      border: 2px solid var(--accent-emerald);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px var(--accent-emerald-glow);
+    }
+
+    .logo-badge img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    h1 span {
+      color: var(--accent-emerald);
+      text-shadow: 0 0 12px var(--accent-emerald-glow);
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 25px auto;
+    }
+
+    .badge-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: #1E293B;
+      border: 1px solid #334155;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .badge.emerald { border-color: var(--accent-emerald); color: var(--accent-emerald); }
+    .badge.blue { border-color: var(--accent-blue); color: var(--accent-blue); }
+    .badge.telegram { border-color: var(--accent-telegram); color: var(--accent-telegram); }
+
+    /* --- SECTION STYLES --- */
+    section {
+      margin-top: 45px;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+    }
+
+    /* --- TELEGRAM CONTACT BANNER --- */
+    .telegram-card {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border: 2px solid var(--accent-telegram);
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(38, 165, 228, 0.15);
+      flex-wrap: wrap;
+    }
+
+    .tg-info h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tg-info p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    .tg-btn {
+      background: var(--accent-telegram);
+      color: #FFF;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 14px 28px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(38, 165, 228, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tg-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(38, 165, 228, 0.6);
+    }
+
+    /* --- FEATURES GRID --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-emerald);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* --- DONATION SECTION STYLES --- */
+    .crypto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .crypto-card {
+      background: linear-gradient(145deg, #111827 0%, #0F172A 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .crypto-card.trc20 { border-color: #FF0013; }
+    .crypto-card.solana { border-color: #14F195; }
+
+    .crypto-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .crypto-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .crypto-tag {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .crypto-tag.trc20 { background: rgba(255, 0, 19, 0.15); color: #FF4D4D; }
+    .crypto-tag.solana { background: rgba(20, 241, 149, 0.15); color: #14F195; }
+
+    .address-box {
+      background: #030712;
+      border: 1px solid var(--card-border);
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.82rem;
+      word-break: break-all;
+      color: var(--accent-amber);
+      margin-bottom: 12px;
+    }
+
+    .action-btn {
+      width: 100%;
+      background: #1E293B;
+      color: var(--text-main);
+      border: 1px solid #334155;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      background: var(--accent-emerald);
+      color: #000;
+      border-color: var(--accent-emerald);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent-telegram);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo-badge">
+        <img src="../icon.png" alt="Kick Viewer Bot PRO Logo" onerror="this.src='https://via.placeholder.com/80/10B981/000000?text=KICK'">
+      </div>
+      <h1>KICK VIEWER BOT <span>PRO v2.5</span></h1>
+      <p class="subtitle">Enterprise-grade, high-concurrency Kick.com viewership automation & stream analytics platform with zero viewer caps.</p>
+      
+      <div class="badge-group">
+        <span class="badge telegram">✈️ Telegram: @MarkBoshara</span>
+        <span class="badge emerald">⚡ Unlimited Viewer Cap</span>
+        <span class="badge blue">🌐 Universal Proxies</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- TELEGRAM DIRECT CONTACT SECTION -->
+    <section>
+      <div class="telegram-card">
+        <div class="tg-info">
+          <h3>✈️ Direct Telegram Support & Inquiries</h3>
+          <p>Contact the developer directly for purchases, licensing inquiries, or custom software setups.</p>
+        </div>
+        <a href="https://t.me/MarkBoshara" target="_blank" class="tg-btn">
+          💬 Chat on Telegram (@MarkBoshara)
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section>
+      <h2 class="section-title">🌟 Key Features & Capabilities</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Unlimited Viewer Scalability</div>
+          <div class="card-desc">Simulate 100 to 5,000+ live stream viewers smoothly using high-speed non-blocking asynchronous WebSocket workers.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <div class="card-title">Universal Proxy Engine</div>
+          <div class="card-desc">Parses HTTP, HTTPS, SOCKS4, and SOCKS5 proxies automatically across all formats (IP:Port, User:Pass) and text encodings.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📺</div>
+          <div class="card-title">Official Stream Integration</div>
+          <div class="card-desc">Direct WebSocket handshake connection to Kick servers with live official stream viewer metrics tracking.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <div class="card-title">Cyber Dark GUI & Animations</div>
+          <div class="card-desc">Modern glassmorphism theme with pulsing live status indicators, active counters, and viewer preset buttons.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <div class="card-title">Real-Time Live Analytics</div>
+          <div class="card-desc">Track connected viewers, stream live stats, connection success rates, workers pool, and session uptime clock live.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <div class="card-title">24/7 Server Stability</div>
+          <div class="card-desc">Built-in logger streams and global exception handlers capture errors to <code>error_log.txt</code> for continuous server uptime.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATIONS & USDT SECTION -->
+    <section>
+      <h2 class="section-title">💎 Payments & USDT Support</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px;">For licensing, purchase, or supporting future updates:</p>
+
+      <div class="crypto-grid">
+        <div class="crypto-card trc20">
+          <div class="crypto-header">
+            <div class="crypto-name">₮ USDT</div>
+            <div class="crypto-tag trc20">TRX (TRC20)</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">TRON Network Deposit Address:</p>
+          <div class="address-box" id="addr-trc20">TY7mtY8RVWBXebZy1RNRofxZDnf2XYkCC9</div>
+          <button class="action-btn" onclick="copyText('addr-trc20', this)">📋 Copy TRC20 Address</button>
+        </div>
+
+        <div class="crypto-card solana">
+          <div class="crypto-header">
+            <div class="crypto-name">₮ USDT</div>
+            <div class="crypto-tag solana">SOL (Solana)</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Solana Network Deposit Address:</p>
+          <div class="address-box" id="addr-sol">346UoaphweYeUGKkSLxorf4DuXjPYNip2Y1nhkh3DNBm</div>
+          <button class="action-btn" onclick="copyText('addr-sol', this)">📋 Copy Solana Address</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Developer: <strong>Mark</strong> | Telegram: <a href="https://t.me/MarkBoshara" target="_blank">@MarkBoshara</a></p>
+      <p style="margin-top: 8px; font-size: 0.8rem; color: #64748B;">Copyright © 2026 Kick Viewer Bot PRO. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyText(id, btn) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+      const orig = btn.innerText;
+      btn.innerText = '✓ Address Copied!';
+      btn.style.background = '#10B981';
+      btn.style.color = '#000';
+      setTimeout(() => {
+        btn.innerText = orig;
+        btn.style.background = '#1E293B';
+        btn.style.color = '#F8FAFC';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
